@@ -4,6 +4,7 @@ import {MAX_EMPLOYEES_IN_VIEW} from './consts';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.scss';
 import Header from './views/AppHeader';
+import HeaderBanner from './views/HeaderBanner';
 
 
 class App extends React.Component {
@@ -35,6 +36,14 @@ class App extends React.Component {
                 </div>
                 <div id='main-container'>
                     <Header/>
+                    <div id='body-container'>
+                        <div id='header-banner-container'>
+                            <HeaderBanner/>
+                        </div>
+                        <div id='main-table-container'>
+                            todo: main table
+                        </div>
+                    </div>
                 </div>
             </div>
         );

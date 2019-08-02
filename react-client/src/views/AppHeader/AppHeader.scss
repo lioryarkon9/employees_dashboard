@@ -1,0 +1,26 @@
+#app-header {
+    height: 7vh;
+    background-color: #fff;
+    border: 5px solid #eceff1;
+    padding: 0 2% 0 2%;
+    #main-title {
+        color: #47577f;
+        font-weight: bold;
+    }
+    #sub-title {
+        color: #e5e7f3;
+        font-size: 0.8em;
+        color: #e5e7f3;
+    }
+    .action-icons {
+        width: 15vw;
+        #app-search-input {
+            width: 8vw;
+            border-radius: 20px;
+            background-image: url('../../assets//magnifying_glass.png');
+            background-repeat: no-repeat;
+            background-position: right;
+            background-size: 22px;
+        }
+    }
+}

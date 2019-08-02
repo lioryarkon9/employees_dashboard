@@ -1,0 +1,1 @@
+export const MAX_EMPLOYEES_IN_VIEW = 10;

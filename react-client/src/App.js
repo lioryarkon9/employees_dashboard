@@ -25,6 +25,7 @@ const App = props => {
                             currentFrom={props.currentFrom}
                             empsToDisplay={props.empsToDisplay}
                             changeEmpRange={props.changeEmpRange}
+                            sortEmployeesByParam={props.sortEmployeesByParam}
                         />
                     </div>
                 </div>

@@ -14,8 +14,8 @@
     },
     {
         "id": 1,
-        "firstName": "Shay",
-        "lastName": "Gross",
+        "firstName": "Avi",
+        "lastName": "Bitter",
         "email": "Shay.gross@gmail.com",
         "phoneNumber": "+972-52-6474882",
         "department": "Name Class",
@@ -27,8 +27,8 @@
     },
     {
         "id": 2,
-        "firstName": "Shay",
-        "lastName": "Gross",
+        "firstName": "Danny",
+        "lastName": "Shovevani",
         "email": "Shay.gross@gmail.com",
         "phoneNumber": "+972-52-6474882",
         "department": "Name Class",

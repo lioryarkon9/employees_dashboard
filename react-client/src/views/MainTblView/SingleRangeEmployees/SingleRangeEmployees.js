@@ -11,7 +11,9 @@ const SingleRangeEmployees = props => {
     }
     return (
         <div id='single-range-employees'>
-            <TblHeader/>
+            <TblHeader 
+                sortEmployeesByParam={props.sortEmployeesByParam}
+            />
             <div id='emp-records-container'>
                 {EmpsToDispaly.map((item, i) => (
                     <div 

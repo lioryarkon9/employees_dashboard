@@ -1,6 +1,8 @@
 import React from 'react';
 import {MAX_EMPLOYEES_IN_VIEW} from '../consts';
 import ALL_EMPLOYEES from '../MockData/employees.json';
+import {ID} from '../consts';
+import {sortObjListByInt, sortObjListByStr} from '../utils';
 
 const WithLogic = App => {
     return class AppLogic extends React.Component {
@@ -25,8 +27,18 @@ const WithLogic = App => {
         filterEmployeesByParam (param) {
             //todo
         }
-        sortEmployeesByParam (param) {
-            //todo
+        sortEmployeesByParam = key => {
+            const AllEmployees = this.state.allEmployees;
+            if (AllEmployees.length > 1) {
+                let sortedEmployees
+                if (key === ID) {
+                    sortedEmployees = sortObjListByInt(Array.from(AllEmployees), key);
+                } else {
+                    sortedEmployees = sortObjListByStr(Array.from(AllEmployees), key)
+                }
+
+                this.setState({allEmployees: sortedEmployees});
+            }
         }
         getBtnObjectsList = () => {
             const BtnObjectsList = [];
@@ -51,6 +63,7 @@ const WithLogic = App => {
                     currentFrom={this.state.currentFrom}
                     empsToDisplay={this.getEmpArrByRange()}
                     changeEmpRange={this.changeEmpRange}
+                    sortEmployeesByParam={this.sortEmployeesByParam}
                 />
             );
         }

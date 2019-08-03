@@ -7,7 +7,7 @@ const ColumnTitle = props => {
             className='column-title d-flex flex-column justify-content-center' 
             style={{width: props.widthPercent + '%'}}
         >
-            <div>{props.title}</div>
+            <div style={{cursor: 'pointer'}} onClick={e => props.sortEmployeesByParam()}>{props.title}</div>
             <div>
                 <input
                     className='form-control column-search'

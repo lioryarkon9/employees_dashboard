@@ -17,7 +17,9 @@ const MainTblView = props => {
                 <SingleRangeEmployees/>
             </div>
             <div id='paging-container' className='d-flex justify-content-center align-items-center'>
-                todo: paging
+                {props.btns.map(item => (
+                    <span key={'_btn-' + item.id}>{item.id}</span>
+                ))}
             </div>
         </div>
     );

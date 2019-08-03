@@ -22,6 +22,9 @@ const App = props => {
                     <div id='main-table-container'>
                         <MainTblView
                             btns={props.btns}
+                            currentFrom={props.currentFrom}
+                            empsToDisplay={props.empsToDisplay}
+                            changeEmpRange={props.changeEmpRange}
                         />
                     </div>
                 </div>

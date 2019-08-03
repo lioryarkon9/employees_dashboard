@@ -1,15 +1,19 @@
 #single-range-employees {
-    background-color: blueviolet;
     height: 100%;
-    #emp-tbl-header {
-        background-color: #4c6594;
-        color: #d9dfe7;
-        height: 10%;
-        width: 100%;
-        box-shadow: 0 0 2px 2px;
-    }
+    width: 100%;
     #emp-records-container {
-        background-color: aqua;
         height: 90%;
+        width: 100%;
+        .emp-record {
+            color: #2c3b57;
+            .emp-item {
+                font-size: 0.7em;
+                padding-left: 0.8%;
+            }
+            #id-item {
+                color: #6c9af9;
+                font-size: 1.1em; 
+            }
+        }
     }
 }

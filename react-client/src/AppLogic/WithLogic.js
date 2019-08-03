@@ -11,8 +11,13 @@ const WithLogic = App => {
                 currentFrom: 0
             }
         }
-        getEmpArrByRange (from = 0, to = MAX_EMPLOYEES_IN_VIEW) {
-            //todo
+        getEmpArrByRange () {
+            const CurrentFrom = this.state.currentFrom;
+            const CurrentTo = CurrentFrom + MAX_EMPLOYEES_IN_VIEW;
+            const AllEmployees = this.state.allEmployees;
+            return AllEmployees.filter((item, index) => {
+                return (index >= CurrentFrom && index < CurrentTo)
+            })
         }
         addEmployee (empObject) {
             //todo
@@ -29,16 +34,23 @@ const WithLogic = App => {
             const NumRequiredBtns = Math.floor(NumEmloyees / MAX_EMPLOYEES_IN_VIEW) + 1;
             for (let i = 0; i < NumRequiredBtns; i++) {
                 const OneBasedIndex = i + 1;
-                BtnObjectsList.push({id : OneBasedIndex})
+                BtnObjectsList.push({id : i, label: OneBasedIndex})
             }
     
             return BtnObjectsList;
+        }
+        changeEmpRange = (btnId) => {
+            const FromIndex = btnId === 0 ? btnId : btnId + (MAX_EMPLOYEES_IN_VIEW - 1);
+            this.setState({currentFrom: FromIndex})
         }
         render () {
             return (
                 <App
                     {...this.props}
                     btns={this.getBtnObjectsList()}
+                    currentFrom={this.state.currentFrom}
+                    empsToDisplay={this.getEmpArrByRange()}
+                    changeEmpRange={this.changeEmpRange}
                 />
             );
         }

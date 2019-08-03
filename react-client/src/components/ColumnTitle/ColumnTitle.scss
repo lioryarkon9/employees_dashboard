@@ -1,0 +1,19 @@
+.column-title {
+    font-size: 0.6em;
+    border-left: 0.5px solid #fff;
+    border-right: 0.5px solid #fff; 
+    padding: 0 0.7% 0 0.7%;
+    .column-search {
+        color: #fff;
+        font-size: 1em;
+        height: 1.2em;
+        background-color: inherit;
+        background-image: url('../../assets//magnifying_glass.png');
+        background-size: 10px;
+        background-position: right;
+        background-repeat: no-repeat;
+        border: none;
+        border-bottom: 0.5px solid #fff;
+        border-radius: 0px !important;
+    }
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import './MainTblView.scss';
 import TblActionIcon from '../../components/TblActionIcon';
+import SingleRangeEmployees from './SingleRangeEmployees';
 
 
 const MainTblView = props => {
@@ -13,7 +14,7 @@ const MainTblView = props => {
                 <TblActionIcon imgSrc=''/>
             </div>
             <div id='employees-tbl-container'>
-                todo: tbl
+                <SingleRangeEmployees/>
             </div>
             <div id='paging-container' className='d-flex justify-content-center align-items-center'>
                 todo: paging

@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.scss';
 import Header from './views/AppHeader';
 import HeaderBanner from './views/HeaderBanner';
+import MainTblView from './views/MainTblView';
 
 
 class App extends React.Component {
@@ -41,7 +42,7 @@ class App extends React.Component {
                             <HeaderBanner/>
                         </div>
                         <div id='main-table-container'>
-                            todo: main table
+                            <MainTblView/>
                         </div>
                     </div>
                 </div>

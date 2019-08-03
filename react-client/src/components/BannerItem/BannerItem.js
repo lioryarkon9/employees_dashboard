@@ -3,7 +3,7 @@ import './BannerItem.scss';
 
 const BannerItem = props => {
     return (
-        <div className='banner-item d-flex'>
+        <div className='banner-item d-flex align-items-center'>
             <div className='header-banner-icon'>
                 <div className='banner-img-container d-flex align-items-center'>
                     <span>todo:img</span>

@@ -4,10 +4,10 @@ import BannerItem from '../../components/BannerItem';
 
 const HeaderBanner = props => {
     return (
-        <div id='header-banner' className='d-flex align-items-center'>
+        <div id='header-banner' className='d-flex'>
             <div 
-                style={{borderRight: 1 + 'px solid'}}
-                className='item flex-fill d-flex justify-content-center'
+                style={{borderRight: 1 + 'px solid #eceff1'}}
+                className='flex-fill d-flex justify-content-center'
             >
                 <BannerItem
                     imgSrc=""
@@ -16,8 +16,8 @@ const HeaderBanner = props => {
                 />
             </div>
             <div 
-                style={{borderRight: 1 + 'px solid'}}
-                className='item flex-fill d-flex justify-content-center'
+                style={{borderRight: 1 + 'px solid #eceff1'}}
+                className='flex-fill d-flex justify-content-center'
             >
                 <BannerItem
                     imgSrc=""
@@ -26,8 +26,8 @@ const HeaderBanner = props => {
                 />
             </div>
             <div 
-                style={{borderRight: 1 + 'px solid'}}
-                className='item flex-fill d-flex justify-content-center'
+                style={{borderRight: 1 + 'px solid #eceff1'}}
+                className='flex-fill d-flex justify-content-center'
             >
                 <BannerItem
                     imgSrc=""
@@ -36,8 +36,8 @@ const HeaderBanner = props => {
                 />
             </div>
             <div 
-                style={{borderRight: 1 + 'px solid'}}
-                className='item flex-fill d-flex justify-content-center'
+                style={{borderRight: 1 + 'px solid #eceff1'}}
+                className='flex-fill d-flex justify-content-center'
             >
                 <BannerItem
                     imgSrc=""
@@ -46,7 +46,7 @@ const HeaderBanner = props => {
                 />
             </div>
             <div 
-                className='item flex-fill d-flex justify-content-center'
+                className='flex-fill d-flex justify-content-center'
             >
                 <BannerItem
                     imgSrc=""

@@ -2,6 +2,8 @@ import React from 'react';
 import './ColumnTitle.scss';
 
 const ColumnTitle = props => {
+    const OnChangeFunc = props.filterEmployeesByParam.filterEmployeesByParam
+    const Key = props.filterEmployeesByParam.key;
     return (
         <div 
             className='column-title d-flex flex-column justify-content-center' 
@@ -11,6 +13,7 @@ const ColumnTitle = props => {
             <div>
                 <input
                     className='form-control column-search'
+                    onChange={e => OnChangeFunc(Key, e.currentTarget.value)}
                 />
             </div>
         </div>

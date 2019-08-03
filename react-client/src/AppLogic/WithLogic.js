@@ -10,7 +10,8 @@ const WithLogic = App => {
             super(props);
             this.state = {
                 allEmployees: ALL_EMPLOYEES,
-                currentFrom: 0
+                currentFrom: 0,
+                searchTimeOutId: null
             }
         }
         getEmpArrByRange () {
@@ -24,8 +25,30 @@ const WithLogic = App => {
         addEmployee (empObject) {
             //todo
         }
-        filterEmployeesByParam (param) {
-            //todo
+        filterEmployeesByParam = (key, filterVal) => {
+            if (this.state.searchTimeOutId) {
+                window.clearTimeout(this.state.searchTimeOutId);
+            }
+
+            const AllEmployees = this.state.allEmployees;
+            let filteredEmployees;
+            const TimeOutId = window.setTimeout(() => {
+                if (key !== ID) {
+                    filteredEmployees = AllEmployees.filter(item => item[key].toLowerCase().startsWith(filterVal));
+                } else {
+                    filteredEmployees = AllEmployees.filter(item => (item[key] + 1) == filterVal);
+                }
+    
+                if (filterVal) {
+                    this.setState({allEmployees: filteredEmployees});
+                } else {
+                    // any added employees won't be displayed
+                    // real world implementation will fetch from db
+                    this.setState({allEmployees: ALL_EMPLOYEES});
+                }
+            }, 1200);
+
+            this.setState({searchTimeOutId: TimeOutId});
         }
         sortEmployeesByParam = key => {
             const AllEmployees = this.state.allEmployees;
@@ -64,6 +87,7 @@ const WithLogic = App => {
                     empsToDisplay={this.getEmpArrByRange()}
                     changeEmpRange={this.changeEmpRange}
                     sortEmployeesByParam={this.sortEmployeesByParam}
+                    filterEmployeesByParam={this.filterEmployeesByParam}
                 />
             );
         }

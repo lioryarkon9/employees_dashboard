@@ -26,6 +26,7 @@ const MainTblView = props => {
                 <SingleRangeEmployees
                     empsToDisplay={props.empsToDisplay}
                     sortEmployeesByParam={props.sortEmployeesByParam}
+                    filterEmployeesByParam={props.filterEmployeesByParam}
                 />
             </div>
             <div id='paging-container' className='d-flex justify-content-center align-items-center'>

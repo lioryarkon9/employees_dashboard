@@ -1,0 +1,23 @@
+.banner-item {
+    width: 100%;
+    padding-left: 5%;
+    .header-banner-icon {
+        padding: 0 8% 0 8%; 
+        .banner-img-container {
+            height: 100%;
+        }
+    }
+    .header-banner-content {
+        padding: 0 8% 0 8%;
+        .banner-figure {
+            color: #467ef8;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        .banner-txt {
+            color: #400a0d;
+            font-size: 0.8em
+        }
+        
+    }
+}

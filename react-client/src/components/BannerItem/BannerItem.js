@@ -6,7 +6,10 @@ const BannerItem = props => {
         <div className='banner-item d-flex align-items-center'>
             <div className='header-banner-icon'>
                 <div className='banner-img-container d-flex align-items-center'>
-                    <span>todo:img</span>
+                    <img
+                        alt='img'
+                        src={props.imgSrc}
+                    />
                 </div>
             </div>
             <div className='header-banner-content flex-fill'>

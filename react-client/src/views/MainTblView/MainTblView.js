@@ -6,6 +6,10 @@ import {MAX_EMPLOYEES_IN_VIEW} from '../../consts';
 import EmpTblPaging from './EmpTblPaging';
 import AddEmpBtn from './AddEmpBtn';
 import NewEmpModal from './NewEmpModal';
+import PRINTER_ICON from '../../assets/printer.png';
+import PDF_ICON from '../../assets/pdf.png';
+import EXCEL_ICON from '../../assets/excel.png';
+import MORE_ACTIONS_ICON from '../../assets/more_actions.png';
 
 
 class MainTblView extends React.Component {
@@ -36,10 +40,10 @@ class MainTblView extends React.Component {
                     toggleNewEmpModal={() => this.setState({isNewEmpModal: !this.state.isNewEmpModal})}
                 />
                 <div id='tbl-actions' className='d-flex justify-content-end'>
-                    <TblActionIcon imgSrc=''/>
-                    <TblActionIcon imgSrc=''/>
-                    <TblActionIcon imgSrc=''/>
-                    <TblActionIcon imgSrc=''/>
+                    <TblActionIcon imgSrc={PRINTER_ICON}/>
+                    <TblActionIcon imgSrc={PDF_ICON}/>
+                    <TblActionIcon imgSrc={EXCEL_ICON}/>
+                    <TblActionIcon imgSrc={MORE_ACTIONS_ICON}/>
                 </div>
                 <div id='employees-tbl-container'>
                     <SingleRangeEmployees

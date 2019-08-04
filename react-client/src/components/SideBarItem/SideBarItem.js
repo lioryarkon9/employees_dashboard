@@ -5,7 +5,7 @@ const SideBarItem = props => {
     return (
         <div className='d-flex align-items-center sidebar-item'>
             <div className='d-flex justify-content-center icon-container'>
-                ICON
+                <img alt='img' src={props.imgSrc}/>
             </div>
             <div className='sidebar-item-title flex-fill'>
                 {props.title}

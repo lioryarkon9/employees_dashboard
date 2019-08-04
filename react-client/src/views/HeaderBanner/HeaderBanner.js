@@ -1,6 +1,11 @@
 import React from 'react';
 import './HeaderBanner.scss';
 import BannerItem from '../../components/BannerItem';
+import IDEA_ICON from '../../assets/idea.png';
+import DOCUMENT_ICON from '../../assets/document.png';
+import CLOCK_ICON from '../../assets/clock.png';
+import ENVELOPE_OPEN from '../../assets/envelope_open.png';
+import ENVELOPE_CLOSED from '../../assets/envelope_closed.png';
 
 const HeaderBanner = props => {
     return (
@@ -10,7 +15,7 @@ const HeaderBanner = props => {
                 className='flex-fill d-flex justify-content-center'
             >
                 <BannerItem
-                    imgSrc=""
+                    imgSrc={IDEA_ICON}
                     figure="1000"
                     headline="Headline1"
                 />
@@ -20,7 +25,7 @@ const HeaderBanner = props => {
                 className='flex-fill d-flex justify-content-center'
             >
                 <BannerItem
-                    imgSrc=""
+                    imgSrc={DOCUMENT_ICON}
                     figure="837"
                     headline="Headline2"
                 />
@@ -30,7 +35,7 @@ const HeaderBanner = props => {
                 className='flex-fill d-flex justify-content-center'
             >
                 <BannerItem
-                    imgSrc=""
+                    imgSrc={CLOCK_ICON}
                     figure="342"
                     headline="Headline3"
                 />
@@ -40,7 +45,7 @@ const HeaderBanner = props => {
                 className='flex-fill d-flex justify-content-center'
             >
                 <BannerItem
-                    imgSrc=""
+                    imgSrc={ENVELOPE_OPEN}
                     figure="473"
                     headline="Headline4"
                 />
@@ -49,7 +54,7 @@ const HeaderBanner = props => {
                 className='flex-fill d-flex justify-content-center'
             >
                 <BannerItem
-                    imgSrc=""
+                    imgSrc={ENVELOPE_CLOSED}
                     figure="123"
                     headline="Headline5"
                 />

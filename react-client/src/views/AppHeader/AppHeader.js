@@ -1,6 +1,7 @@
 import React from 'react';
 import './AppHeader.scss';
 import SETTINGS_ICON from '../../assets/settings.png';
+import BELL_ICON from '../../assets/bell.png';
 
 const AppHeader = props => {
     return (
@@ -18,7 +19,7 @@ const AppHeader = props => {
                     <input id='app-search-input' className='form-control'/>
                 </div>
                 <div>
-                    bell
+                    <img alt='img' src={BELL_ICON}/>
                 </div>
                 <div>
                     <img alt='set' src={SETTINGS_ICON}/>

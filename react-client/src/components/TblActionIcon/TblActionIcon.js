@@ -6,7 +6,7 @@ const TblActionIcon = props => {
             style={{marginRight: 1 + '%'}} 
             className='tbl-action-icon'
         >
-            ICON
+            <img alt='img' src={props.imgSrc} style={{width: 30 + 'px'}}/>
         </div>
     );
 }

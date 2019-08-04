@@ -5,13 +5,14 @@ import Header from './views/AppHeader';
 import HeaderBanner from './views/HeaderBanner';
 import MainTblView from './views/MainTblView';
 import WithLogic from './AppLogic/WithLogic';
+import SideBar from './views/SideBar';
 
 
 const App = props => {
     return (
         <div id='employees-app' className='d-flex'>
             <div id='sidebar-container'>
-                todo: sidebar
+                <SideBar/>
             </div>
             <div id='main-container'>
                 <Header/>

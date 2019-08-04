@@ -1,0 +1,22 @@
+#add-emp-btn-container {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: -28px;
+    right: 0;
+    #add-emp-icon-cropper {
+        cursor: pointer;
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+        overflow: hidden;
+        box-shadow: 0 0 5px 5px #4c6594;
+        border: 1px solid #fff;;
+        #add-emp-icon {
+            background-color: #3671f6;
+            height: 100%;
+            width: 100%;
+            color: #fff;
+        }
+    }
+}

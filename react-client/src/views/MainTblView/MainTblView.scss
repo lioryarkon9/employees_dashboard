@@ -1,24 +1,12 @@
 #main-tbl-view {
     padding: 2%;
     height: 100%;
+    position: relative;
     #tbl-actions {
         height: 6%;
     }
     #employees-tbl-container {
         height: 85%;
         width: 100%;
-    }
-    #paging-container {
-        height: 6%;
-        margin-top: 1%;
-        color: #2a66e4;
-        .paging-btns-container {
-            margin-left: 5px;
-            .paging-btn {
-                width: 25px;
-                text-align: center;
-                border-radius: 5px;
-            }
-        }
     }
 }

@@ -24,8 +24,12 @@ const WithLogic = App => {
                 return (index >= CurrentFrom && index < CurrentTo)
             })
         }
-        addEmployee (empObject) {
-            //todo
+        addEmployee = empObject => {
+            // todo: set the proper id
+            const AllEmployees = this.state.allEmployees;
+            empObject.id = AllEmployees.length;
+            AllEmployees.push(empObject);
+            this.setState({allEmployees: AllEmployees});
         }
         filterEmployeesByParam = (key, filterVal) => {
             const AllEmployees = this.state.allEmployees;
@@ -87,6 +91,7 @@ const WithLogic = App => {
                     changeEmpRange={this.changeEmpRange}
                     sortEmployeesByParam={this.sortEmployeesByParam}
                     filterEmployeesByParam={this.filterEmployeesByParam}
+                    addEmployee={this.addEmployee}
                 />
             );
         }

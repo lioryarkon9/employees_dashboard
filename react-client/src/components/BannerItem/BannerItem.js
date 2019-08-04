@@ -9,7 +9,7 @@ const BannerItem = props => {
                     <span>todo:img</span>
                 </div>
             </div>
-            <div className='header-banner-content'>
+            <div className='header-banner-content flex-fill'>
                 <div className='banner-figure'>
                     {props.figure}
                 </div>

@@ -11,14 +11,16 @@ const WithLogic = App => {
             this.state = {
                 allEmployees: ALL_EMPLOYEES,
                 currentFrom: 0,
-                searchTimeOutId: null
+                filteredEmployees: []
             }
         }
         getEmpArrByRange () {
             const CurrentFrom = this.state.currentFrom;
             const CurrentTo = CurrentFrom + MAX_EMPLOYEES_IN_VIEW;
             const AllEmployees = this.state.allEmployees;
-            return AllEmployees.filter((item, index) => {
+            const FilteredEmployees = this.state.filteredEmployees;
+            const ListToUse = FilteredEmployees.length ? FilteredEmployees : AllEmployees;
+            return ListToUse.filter((item, index) => {
                 return (index >= CurrentFrom && index < CurrentTo)
             })
         }
@@ -26,33 +28,26 @@ const WithLogic = App => {
             //todo
         }
         filterEmployeesByParam = (key, filterVal) => {
-            if (this.state.searchTimeOutId) {
-                window.clearTimeout(this.state.searchTimeOutId);
-            }
-
             const AllEmployees = this.state.allEmployees;
             let filteredEmployees;
-            const TimeOutId = window.setTimeout(() => {
-                if (key !== ID) {
-                    filteredEmployees = AllEmployees.filter(item => item[key].toLowerCase().startsWith(filterVal));
-                } else {
-                    filteredEmployees = AllEmployees.filter(item => (item[key] + 1) == filterVal);
-                }
-    
-                if (filterVal) {
-                    this.setState({allEmployees: filteredEmployees});
-                } else {
-                    // any added employees won't be displayed
-                    // real world implementation will fetch from db
-                    this.setState({allEmployees: ALL_EMPLOYEES});
-                }
-            }, 1200);
+            if (key !== ID) {
+                filteredEmployees = AllEmployees.filter(item => item[key].toLowerCase().startsWith(filterVal));
+            } else {
+                filteredEmployees = AllEmployees.filter(item => (item[key] + 1) == filterVal);
+            }
 
-            this.setState({searchTimeOutId: TimeOutId});
+            if (filterVal) {
+                this.setState({filteredEmployees});
+            } else {
+                this.setState({filteredEmployees: []});
+            }
         }
         sortEmployeesByParam = key => {
             const AllEmployees = this.state.allEmployees;
-            if (AllEmployees.length > 1) {
+            const FilteredEmployees = this.state.filteredEmployees;
+            const ListToUse = FilteredEmployees.length ? FilteredEmployees : AllEmployees;
+            const KeyToSet = FilteredEmployees.length ? 'filteredEmployees' : 'allEmployees';
+            if (ListToUse.length > 1) {
                 let sortedEmployees
                 if (key === ID) {
                     sortedEmployees = sortObjListByInt(Array.from(AllEmployees), key);
@@ -60,7 +55,11 @@ const WithLogic = App => {
                     sortedEmployees = sortObjListByStr(Array.from(AllEmployees), key)
                 }
 
-                this.setState({allEmployees: sortedEmployees});
+                this.setState(prevState => {
+                    prevState[KeyToSet] = sortedEmployees;
+
+                    return prevState;
+                });
             }
         }
         getBtnObjectsList = () => {

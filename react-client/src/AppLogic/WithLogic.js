@@ -37,7 +37,7 @@ const WithLogic = App => {
             if (key !== ID) {
                 filteredEmployees = AllEmployees.filter(item => item[key].toLowerCase().startsWith(filterVal));
             } else {
-                filteredEmployees = AllEmployees.filter(item => (item[key] + 1) == filterVal);
+                filteredEmployees = AllEmployees.filter(item => (item[key] + 1).toString().startsWith(filterVal));
             }
 
             if (filterVal) {

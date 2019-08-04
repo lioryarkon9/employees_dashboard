@@ -20,12 +20,12 @@ const WithLogic = App => {
             const AllEmployees = this.state.allEmployees;
             const FilteredEmployees = this.state.filteredEmployees;
             const ListToUse = FilteredEmployees.length ? FilteredEmployees : AllEmployees;
+
             return ListToUse.filter((item, index) => {
                 return (index >= CurrentFrom && index < CurrentTo)
             })
         }
         addEmployee = empObject => {
-            // todo: set the proper id
             const AllEmployees = this.state.allEmployees;
             empObject.id = AllEmployees.length;
             AllEmployees.push(empObject);
@@ -41,7 +41,7 @@ const WithLogic = App => {
             }
 
             if (filterVal) {
-                this.setState({filteredEmployees});
+                this.setState({filteredEmployees, currentFrom: 0});
             } else {
                 this.setState({filteredEmployees: []});
             }
@@ -68,7 +68,10 @@ const WithLogic = App => {
         }
         getBtnObjectsList = () => {
             const BtnObjectsList = [];
-            const NumEmloyees = this.state.allEmployees.length > 0 ? this.state.allEmployees.length : 1;
+            const FilteredEmployees = this.state.filteredEmployees;
+            const AllEmployees = this.state.allEmployees;
+            const ListToUse = FilteredEmployees.length ? FilteredEmployees : AllEmployees;
+            const NumEmloyees = ListToUse.length > 0 ? ListToUse.length : 1;
             const NumRequiredBtns = Math.floor(NumEmloyees / MAX_EMPLOYEES_IN_VIEW) + 1;
             for (let i = 0; i < NumRequiredBtns; i++) {
                 const OneBasedIndex = i + 1;
